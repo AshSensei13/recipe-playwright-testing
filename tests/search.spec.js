@@ -12,10 +12,9 @@ test("Loads the search page and fills in search form", async ({ page }) => {
     await search.goto()
 
 	await search.fillSearchForm({
-		recipe: 'Tomato'
+		recipe: 'Beef'
 	})
 
 	await search.submit()
-	await expect(page.locator('div').nth(5)).toBeVisible()
-	await expect(page.getByRole('heading', { name: 'Tomato Twins' })).toBeVisible()
+	await search.expectSuccess()
 })
