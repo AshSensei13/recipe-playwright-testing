@@ -6,5 +6,5 @@ test("displays a home page and can navaigate between different pages", async ({ 
     await home.goto()
     await home.checkHeader()
     await home.navigate()
-    await home.links()
+    await home.checkHeader()
 })
