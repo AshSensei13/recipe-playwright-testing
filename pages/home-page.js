@@ -4,10 +4,10 @@ class HomePage {
     constructor(page) {
         this.page = page;
         this.navhome = page.getByRole('link', { name: 'Home', exact: true })
-        this.header = page.getByText('HomePage')
+        this.header = page.getByText('Welcome to the recipe Finder')
         this.navAllRecipes = page.getByRole('link', { name: 'All recipes', exact: true });
         this.navsearch = page.getByRole('link', { name: 'Search recipes' });
-        this.image = page.getByRole('link', { name: 'Chicken Caesar Wraps American' })
+        this.image = page.getByRole('link', { name: 'Chicken Caesar Wraps Main' })
     }
 
     async goto() {

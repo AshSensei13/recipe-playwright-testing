@@ -6,7 +6,7 @@ class SearchPage {
         this.header = page.getByRole('heading', { name: 'Chicken Caesar Wraps' })
 		this.searchForm = page.getByRole('textbox')
 		this.submitButton = page.getByRole('button', { name: 'Search' })
-		this.imgChicken = page.getByRole('link', { name: 'Chicken Caesar Wraps' })
+		this.imgChicken = page.getByRole('link', { name: 'Chicken Caesar Wraps Main' })
 		this.imgBeef = page.getByRole('link', { name: 'One Pot Hamburger Stroganoff' })
     }
 
@@ -33,6 +33,7 @@ class SearchPage {
 	async expectSuccess() {
 		await expect(this.imgBeef).toBeVisible()
 		await this.imgBeef.click()
+		await this.page.waitForLoadState('networkidle')
 
 		await expect(this.page.getByRole('heading', { name: 'One Pot Hamburger Stroganoff' })).toBeVisible()
 	}
